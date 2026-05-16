@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="warm">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CROSHO — Crochet with Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Theme Panel -->
+  <div class="theme-panel" id="theme-panel">
+    <button class="theme-toggle-btn" id="theme-toggle-btn" title="Themes">
+      <i class="fa-solid fa-palette"></i>
+    </button>
+    <div class="theme-drawer" id="theme-drawer">
+      <p class="theme-label">Mood & Theme</p>
+      <div class="theme-options">
+        <button class="theme-btn active" data-theme="warm" title="Warm Cream">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#FDFBF7,#C67B5C)"></span>
+          <span>Warm</span>
+        </button>
+        <button class="theme-btn" data-theme="dark" title="Dark Mode">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#1a1a2e,#C67B5C)"></span>
+          <span>Dark</span>
+        </button>
+        <button class="theme-btn" data-theme="sage" title="Sage Garden">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#f0f4f0,#7C9E8E)"></span>
+          <span>Sage</span>
+        </button>
+        <button class="theme-btn" data-theme="blush" title="Blush Rose">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#fff0f3,#e8607a)"></span>
+          <span>Blush</span>
+        </button>
+        <button class="theme-btn" data-theme="ocean" title="Deep Ocean">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#0a1628,#2a7abf)"></span>
+          <span>Ocean</span>
+        </button>
+        <button class="theme-btn" data-theme="forest" title="Autumn Forest">
+          <span class="theme-swatch" style="background:linear-gradient(135deg,#1a1200,#d4873a)"></span>
+          <span>Forest</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="logo" onclick="navigate('home')">
+        <div class="logo-yarn">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" fill="var(--accent)" opacity="0.15"/>
+            <circle cx="16" cy="16" r="10" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <circle cx="16" cy="16" r="5" fill="var(--accent)" opacity="0.5"/>
+            <circle cx="16" cy="16" r="2" fill="var(--accent)"/>
+          </svg>
+        </div>
+        CROSHO
+      </div>
+      <div class="nav-links" id="nav-links">
+        <button onclick="navigate('home')"      id="nav-home">Home</button>
+        <button onclick="navigate('patterns')"  id="nav-patterns">Free Patterns</button>
+        <button onclick="navigate('gallery')"   id="nav-gallery">Gallery</button>
+        <button onclick="navigate('collab')"    id="nav-collab">Collaborators</button>
+        <button onclick="navigate('contact')"   id="nav-contact">Contact & Orders</button>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <button onclick="navigate('home');closeMobile()">Home</button>
+      <button onclick="navigate('patterns');closeMobile()">Free Patterns</button>
+      <button onclick="navigate('gallery');closeMobile()">Gallery</button>
+      <button onclick="navigate('collab');closeMobile()">Collaborators</button>
+      <button onclick="navigate('contact');closeMobile()">Contact & Orders</button>
+    </div>
+  </nav>
+
+  <!-- ===================== HOME ===================== -->
+  <section id="section-home" class="page-section active">
+    <div class="hero">
+      <div class="hero-content-col section-fade">
+        <p class="hero-eyebrow">✦ Independent Crochet Studio · Est. 2020</p>
+        <h1 class="hero-title">
+          Crafting Stories<br>
+          with <em>Every Stitch</em>
+        </h1>
+        <p class="hero-bio">
+          Hello! I'm Priya — a crochet artist, educator, and pattern designer. I create handcrafted pieces, share free patterns, and help learners fall in love with crochet, one stitch at a time.
+        </p>
+        <span class="hero-location">
+          <i class="fa-solid fa-location-dot"></i>
+          Mumbai, Maharashtra, India
+        </span>
+
+        <div class="perks-grid">
+          <div class="perk-card">
+            <div class="perk-icon">✨</div>
+            <div class="perk-text">
+              <strong>Bulk Order Bonus</strong>
+              <span>Order 10+ items — FREE delivery anywhere in India!</span>
+            </div>
+            <span class="perk-badge">FREE SHIP</span>
+          </div>
+          <div class="perk-card">
+            <div class="perk-icon">🎁</div>
+            <div class="perk-text">
+              <strong>Join the CROSHO Family</strong>
+              <span>Follow on socials to unlock seasonal discounts + mystery gift!</span>
+            </div>
+            <span class="perk-badge">FREE GIFT</span>
+          </div>
+        </div>
+
+        <p class="social-label">Find me on</p>
+        <div class="social-icons">
+          <a href="#" class="social-btn instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn youtube"   title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-btn pinterest" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-image-col">
+        <div class="hero-img-frame">
+          <img src="https://images.unsplash.com/photo-1615482200949-21a0d6d5f985?w=900&q=80&auto=format&fit=crop" alt="Indian Crochet Artist" />
+          <div class="hero-image-overlay"></div>
+        </div>
+        <div class="hero-float-badge">
+          <span class="badge-icon">🌿</span>
+          <span>Handcrafted in India</span>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num">200+</span><span class="stat-lbl">Patterns</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">50k+</span><span class="stat-lbl">Community</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">4.9★</span><span class="stat-lbl">Rating</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Strip -->
+    <div class="feature-strip">
+      <div class="feature-strip-inner">
+        <div class="feature-item"><i class="fa-solid fa-leaf"></i> 100% Handmade</div>
+        <div class="feature-sep">✦</div>
+        <div class="feature-item"><i class="fa-solid fa-gift"></i> Free Patterns Weekly</div>
+        <div class="feature-sep">✦</div>
+        <div class="feature-item"><i class="fa-solid fa-truck"></i> India-Wide Delivery</div>
+        <div class="feature-sep">✦</div>
+        <div class="feature-item"><i class="fa-solid fa-star"></i> Artist-Credited Always</div>
+        <div class="feature-sep">✦</div>
+        <div class="feature-item"><i class="fa-solid fa-heart"></i> Made with Love</div>
+        <div class="feature-sep">✦</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PATTERNS ===================== -->
+  <section id="section-patterns" class="page-section">
+    <div class="container section-fade">
+      <div class="section-header">
+        <span class="eyebrow">✿ Stitch by Stitch</span>
+        <h2>Free Pattern Library</h2>
+        <p>Curated crochet patterns for every skill level — completely free, forever.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Patterns</button>
+        <button class="filter-btn" data-filter="beginner">Beginner</button>
+        <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+        <button class="filter-btn" data-filter="advanced">Advanced</button>
+      </div>
+
+      <div class="patterns-grid" id="patterns-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY (Pinterest-style) ===================== -->
+  <section id="section-gallery" class="page-section">
+    <div class="container section-fade">
+      <div class="section-header">
+        <span class="eyebrow">✿ Crafted with Heart</span>
+        <h2>Pattern Inspiration Gallery</h2>
+        <p>Browse our visual library — save, pin, and get inspired for your next project.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="gallery-controls">
+        <div class="gallery-search-wrap">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" id="gallery-search" placeholder="Search patterns, colors, styles…" oninput="filterGallery()" />
+        </div>
+        <div class="gallery-filter-tags" id="gallery-tags">
+          <button class="tag-btn active" data-tag="all">All</button>
+          <button class="tag-btn" data-tag="amigurumi">Amigurumi</button>
+          <button class="tag-btn" data-tag="blanket">Blankets</button>
+          <button class="tag-btn" data-tag="bag">Bags</button>
+          <button class="tag-btn" data-tag="floral">Florals</button>
+          <button class="tag-btn" data-tag="wearable">Wearables</button>
+          <button class="tag-btn" data-tag="home">Home Décor</button>
+        </div>
+      </div>
+
+      <div class="masonry-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== COLLABORATORS ===================== -->
+  <section id="section-collab" class="page-section">
+    <div class="container section-fade">
+      <div class="section-header">
+        <span class="eyebrow">✦ Co-Create with Us</span>
+        <h2>Collaborators Hub</h2>
+        <p>A welcoming space for fellow crochet artists to shine and share their craft.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="collab-layout">
+        <div class="collab-info">
+          <h3>Share Your Art.<br>Keep Your Credit.</h3>
+          <p>CROSHO believes every artist deserves to be seen. We invite independent creators, hobbyists, and professional designers to showcase their crochet patterns — completely free.</p>
+          <p>We never claim ownership of your work. Your pattern, your name, your brand. We simply amplify your voice.</p>
+          <ul class="perks-list">
+            <li><span class="check">✓</span> <span>You retain <strong>100% ownership</strong> of your pattern and designs.</span></li>
+            <li><span class="check">✓</span> <span>Full credit displayed prominently on every pattern card and detail view.</span></li>
+            <li><span class="check">✓</span> <span>Dedicated backlink to your Instagram, YouTube, or personal website.</span></li>
+            <li><span class="check">✓</span> <span>Exposure to thousands of crochet enthusiasts across India and beyond.</span></li>
+            <li><span class="check">✓</span> <span>No exclusivity required — publish your pattern anywhere else too!</span></li>
+            <li><span class="check">✓</span> <span>We feature select patterns in our weekly newsletter.</span></li>
+          </ul>
+          <blockquote class="collab-quote">"Together we stitch a stronger, kinder creative community."<cite>— Priya, CROSHO</cite></blockquote>
+        </div>
+
+        <div class="collab-form-card">
+          <h3>Submit Your Pattern</h3>
+          <form id="collab-form" novalidate>
+            <div class="form-group">
+              <label>Artist Name *</label>
+              <input type="text" placeholder="Your full name or studio name" required minlength="2" />
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Social / Website Link *</label>
+              <input type="url" placeholder="https://www.instagram.com/yourhandle" required />
+            </div>
+            <div class="form-group">
+              <label>Pattern Title *</label>
+              <input type="text" placeholder="e.g. Sunflower Granny Square" required minlength="3" />
+            </div>
+            <div class="form-group">
+              <label>Pattern Steps & Notes *</label>
+              <textarea rows="5" placeholder="Paste your pattern instructions here…" required minlength="20"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Submit Pattern
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="section-contact" class="page-section">
+    <div class="container section-fade">
+      <div class="section-header">
+        <span class="eyebrow">✦ Let's Create Together</span>
+        <h2>Contact & Custom Orders</h2>
+        <p>Have a custom piece in mind or want to say hello? We're all ears.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>For order inquiries, custom design requests, wholesale discussions, or any feedback, reach out directly via email or use the form.</p>
+          <div class="email-pill">
+            <i class="fa-solid fa-envelope"></i>
+            hello@crosho.in
+          </div>
+
+          <h4 class="sub-heading">Delivery Rate Sheet</h4>
+          <div class="delivery-table-wrap">
+            <table class="delivery-table">
+              <thead>
+                <tr><th>Destination</th><th>Items</th><th>Charge</th><th>Time</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mumbai Local</td><td>Any</td><td class="free-badge">FREE</td><td>1–2 days</td></tr>
+                <tr><td>Maharashtra</td><td>1–9</td><td>₹60</td><td>3–5 days</td></tr>
+                <tr><td>Maharashtra</td><td>10+</td><td class="free-badge">FREE</td><td>3–5 days</td></tr>
+                <tr><td>All India</td><td>1–9</td><td>₹120</td><td>5–7 days</td></tr>
+                <tr><td>All India</td><td>10+</td><td class="free-badge">FREE</td><td>5–7 days</td></tr>
+                <tr><td>International</td><td>Any</td><td class="discount-badge">On Request</td><td>10–14 days</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Place an Order / Enquiry</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Full name" required minlength="2" />
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Phone (optional)</label>
+              <input type="tel" placeholder="+91 98765 43210" />
+            </div>
+            <div class="form-group">
+              <label>Order / Query Type *</label>
+              <select required>
+                <option value="" disabled selected>Select a type…</option>
+                <option>Custom Order</option>
+                <option>Bulk Order</option>
+                <option>Pattern Query</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message *</label>
+              <textarea rows="4" placeholder="Tell us about your order or question…" required minlength="10"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MODAL ===================== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModalOnBg(event)">
+    <div class="modal-box" id="modal-box">
+      <div class="modal-header">
+        <div>
+          <h2 id="modal-title"></h2>
+          <p class="modal-meta" id="modal-meta"></p>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-actions">
+        <button class="btn-action btn-print" onclick="printPattern()">
+          <i class="fa-solid fa-print"></i> Print
+        </button>
+        <div class="download-group">
+          <button class="btn-action btn-download" onclick="downloadPattern('txt')">
+            <i class="fa-solid fa-file-lines"></i> TXT
+          </button>
+          <button class="btn-action btn-download" onclick="downloadPattern('pdf')">
+            <i class="fa-solid fa-file-pdf"></i> PDF
+          </button>
+          <button class="btn-action btn-download" onclick="downloadPattern('doc')">
+            <i class="fa-solid fa-file-word"></i> DOC
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== GALLERY LIGHTBOX ===================== -->
+  <div class="lightbox-overlay" id="lightbox-overlay" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-prev" id="lb-prev" onclick="lightboxNav(-1,event)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-next" id="lb-next" onclick="lightboxNav(1,event)"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+        <div class="lightbox-tags" id="lightbox-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== TOAST ===================== -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toast-icon"></span>
+    <span id="toast-msg"></span>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <div class="logo-yarn-sm"></div>
+        <span>CROSHO</span>
+      </div>
+      <p>Crafted with love from Mumbai, India &nbsp;·&nbsp; <strong>hello@crosho.in</strong></p>
+      <p class="footer-copy">© 2025 CROSHO. All patterns are free for personal use.</p>
+    </div>
+  </footer>
+
+  <!-- Print Template (hidden) -->
+  <div id="print-area" style="display:none"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
